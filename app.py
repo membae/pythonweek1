@@ -37,8 +37,11 @@ def decorator_func(func):
         return func(*args, **kwargs)
     return wrapper
 
-def apply_decorator(func):
-    return decorator_func(func)
+@decorator_func
+def apply_decorator():
+    print("decorator")
+
+apply_decorator()
 
 #sort list of tuple sequence
 def sort_by_age(list_of_tuples):
