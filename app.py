@@ -43,7 +43,9 @@ def apply_decorator(func):
 #sort list of tuple sequence
 def sort_by_age(list_of_tuples):
     return sorted(list_of_tuples, key=lambda x: x[1])
-print(sort_by_age())
+people = [("Alice", 30), ("Bob", 25), ("Charlie", 35)]
+sorted_people = sort_by_age(people)
+print(sorted_people)
 #merge dictionaries
 def merge_dicts(dict1, dict2):
     merged_dict = dict1.copy()  # Start with a copy of the first dictionary
@@ -55,6 +57,10 @@ def merge_dicts(dict1, dict2):
             merged_dict[key] = value  # Add the key-value pair if key is only in the second dictionary
     
     return merged_dict
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 3, 'c': 4}
+merged = merge_dicts(dict1, dict2)
+print(merged)
 #OOP class creation
 class Car:
     def __init__(self, make, model, year):
@@ -65,4 +71,5 @@ class Car:
     def display_info(self):
         print(f"Car Information: {self.year} {self.make} {self.model}")
 
-
+my_car = Car("Toyota", "Camry", 2020)
+my_car.display_info()  
